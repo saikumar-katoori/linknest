@@ -1,0 +1,36 @@
+# ============================================
+#  LinkNest — Required Modules
+# ============================================
+# This is a Node.js project. Install dependencies
+# using npm (not pip). This file lists all packages
+# for reference.
+#
+# Quick setup:
+#   cd backend  && npm install
+#   cd frontend && npm install
+# ============================================
+
+# ── Backend (backend/package.json) ──────────
+
+express           # Web framework
+mongoose          # MongoDB ODM
+dotenv            # Load .env variables
+jsonwebtoken      # JWT authentication
+bcryptjs          # Password hashing
+cors              # Cross-origin requests
+validator         # Input validation
+node-telegram-bot-api  # Telegram bot integration
+nodemon           # Auto-restart in dev (devDependency)
+
+# ── Frontend (frontend/package.json) ────────
+
+react             # UI library
+react-dom         # React DOM renderer
+react-router-dom  # Client-side routing
+axios             # HTTP client
+react-hot-toast   # Toast notifications
+tailwindcss       # Utility-first CSS
+postcss           # CSS processing
+autoprefixer      # CSS vendor prefixes
+vite              # Build tool / dev server
+@vitejs/plugin-react  # Vite React plugin

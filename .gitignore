@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Environment variables (DB URI, JWT secret, Telegram token, admin credentials)
+.env
+
+# Build output
+dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# WhatsApp auth (legacy)
+whatsapp/auth_info/
