@@ -31,10 +31,10 @@ export const login = (email, password) =>
   api.post("/auth/login", { email, password });
 
 // Links
-export const getLinks = (params) => api.get("/api/links", { params });
-export const createLink = (data) => api.post("/api/links", data);
-export const updateLink = (id, data) => api.put(`/api/links/${id}`, data);
-export const deleteLink = (id) => api.delete(`/api/links/${id}`);
-export const getCategories = () => api.get("/api/links/categories");
+export const getLinks = (params) => api.get(`${API}/api/links`, { params });
+export const createLink = (data) => api.post(`${API}/api/links`, data);
+export const updateLink = (id, data) => api.put(`${API}/api/links/${id}`, data);
+export const deleteLink = (id) => api.delete(`${API}/api/links/${id}`);
+export const getCategories = () => api.get(`${API}/api/links/categories`);
 
 export default api;
