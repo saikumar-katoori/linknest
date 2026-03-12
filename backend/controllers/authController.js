@@ -10,21 +10,35 @@ const login = async (req, res) => {
       return res.status(400).json({ message: "Email and password are required." });
     }
 
-    const user = await User.findOne({ email: email.toLowerCase().trim() });
-    if (!user) {
+    // const user = await User.findOne({ email: email.toLowerCase().trim() });
+    // if (!user) {
+    //   return res.status(401).json({ message: "Invalid credentials." });
+    // }
+
+    const originalEmail = process.env.ADMIN_EMAIL;
+    const originalPassword = process.env.ADMIN_PASSWORD;
+    if (email.toLowerCase().trim() !== originalEmail) {
       return res.status(401).json({ message: "Invalid credentials." });
     }
 
-    const isMatch = await user.comparePassword(password);
-    if (!isMatch) {
+    if (password !== originalPassword) {
       return res.status(401).json({ message: "Invalid credentials." });
     }
 
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
+    if(email.toLowerCase().trim() !== originalEmail || password !== originalPassword) {
+      return res.status(401).json({ message: "Invalid credentials." });
+    }
+
+    // const isMatch = await user.comparePassword(password);
+    // if (!isMatch) {
+    //   return res.status(401).json({ message: "Invalid credentials." });
+    // }
+
+    const token = jwt.sign({ email: originalEmail }, process.env.JWT_SECRET, {
       expiresIn: "7d",
     });
 
-    res.json({ token, email: user.email });
+    res.json({ token, email: originalEmail });
   } catch (error) {
     console.error("Login error:", error.message);
     res.status(500).json({ message: "Server error." });
