@@ -28,7 +28,7 @@ api.interceptors.response.use(
 
 // Auth
 export const login = (email, password) =>
-  api.post("/auth/login", { email, password });
+  api.post(`${API}/api/auth/login`, { email, password });
 
 // Links
 export const getLinks = (params) => api.get(`${API}/api/links`, { params });
