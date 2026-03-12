@@ -13,9 +13,6 @@ const PORT = process.env.PORT || 5000;
 app.use(cors({origin: "*"}));
 app.use(express.json({ limit: "1mb" }));
 
-import cors from "cors";
-
-
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/links", linkRoutes);
